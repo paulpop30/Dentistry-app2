@@ -9,10 +9,10 @@
   - Appointments = appointments
 
 - Provide various reports, using Java 8 streams. You should create at least 5 different reports. See some examples below:
-  o	all the appointments for a certain patient (and their status); \
-  o	the problems of a certain patient; \
-  o	the phone number of a certain patient (given by id); \
-  o	the name of the persons who booked a certain car; \
-  o	all cars rented by a certain person; \
-  o	the list of birthday cakes that for ordered for a given day; \
-  o	the days when a certain birthday cake has to be delivered.
+  - all the appointments for a certain patient (and their status); \
+  -	the problems of a certain patient; \
+  -	the phone number of a certain patient (given by id); \
+  -	the name of the persons who booked a certain car; \
+  -	all cars rented by a certain person; \
+  -	the list of birthday cakes that for ordered for a given day; \
+  -	the days when a certain birthday cake has to be delivered.
