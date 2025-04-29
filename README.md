@@ -105,6 +105,25 @@ Leverages Java 8 Streams for powerful data querying:
   - Layered Architecture (separates UI, business logic, and data layers)
 
 ---
+├── Domain
+│   ├── Appointment.java
+│   └── Patient.java
+├── Repository
+│   ├── AppointmentRepository.java
+│   ├── PatientRepository.java
+│   ├── FilterRepository.java
+│   └── MemoryRepository.java
+├── Service
+│   ├── AppointmentService.java
+│   ├── PatientService.java
+│   ├── FilterService.java
+│   └── IService.java
+├── UI
+│   ├── IUi.java
+│   └── MainUi.java
+├── MyExceptions
+│   └── EmptyRepoException.java
+└── Main.java
 
 ## 🧪 How to Run
 
