@@ -1,5 +1,4 @@
 ### Dentistry application
-- Continue the implementation of the problem you have chosen for the first assignment. You must:
 
   - Implement classes in the repository that allow storing and retrieving data to/from a relational database. The decision of which repositories are employed, as well as the location of the 
   repository input files / database will be made available via the program’s settings.properties file and the Java Properties class. See an example is below:
