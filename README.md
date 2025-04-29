@@ -27,11 +27,6 @@ Defines the core business entities and validation logic.
 - `Patient.java` – Represents a patient with fields: `id`, `name`, `phoneNumber`
 - `Appointment.java` – Represents a clinic appointment with fields: `id`, `patient`, `problem`, `date`, `status`
 
-**Validators:**
-- `Validator<T>` – Generic interface for validation
-- `PatientValidator` – Validates name and phone number
-- `AppointmentValidator` – Validates appointment date, problem description, and status
-
 ---
 
 ### 2. 💾 Repository Layer (`repository/`)
