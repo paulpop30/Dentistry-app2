@@ -23,7 +23,7 @@ Dentistry-app2 follows a **Layered Architecture** consisting of:
 ### 1. 📦 Domain Layer (`domain/`)
 Defines the core business entities and validation logic.
 
-- `Entity.java` – Abstract base class with an `id` field
+- `Identifiable.java` – Interface with an `id` field
 - `Patient.java` – Represents a patient with fields: `id`, `name`, `phoneNumber`
 - `Appointment.java` – Represents a clinic appointment with fields: `id`, `patient`, `problem`, `date`, `status`
 
