@@ -67,7 +67,8 @@ Implements business logic and operations on domain entities.
     - Filter appointments by date
     - Count appointments per patient
     - Identify most common problems
-
+ - `FilterService`:
+   - Provides filtered data based on repository data.
 ---
 
 ### 4. 🖥️ UI Layer (`ui/`)
