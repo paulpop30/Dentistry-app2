@@ -105,25 +105,49 @@ Leverages Java 8 Streams for powerful data querying:
   - Layered Architecture (separates UI, business logic, and data layers)
 
 ---
+
+# Project Title
+
+## Description
+This project is a dental appointment management system. It allows the management of patient data, appointments, and filtering of records. It includes a service layer for business logic and a UI for interaction with the system.
+
+## File Structure
+
+```
 ├── Domain
-│   ├── Appointment.java
-│   └── Patient.java
+│   ├── Appointment.java        # Represents a dental appointment.
+│   └── Patient.java           # Represents a patient in the system.
 ├── Repository
-│   ├── AppointmentRepository.java
-│   ├── PatientRepository.java
-│   ├── FilterRepository.java
-│   └── MemoryRepository.java
+│   ├── AppointmentRepository.java  # Repository for managing appointments.
+│   ├── PatientRepository.java     # Repository for managing patient data.
+│   ├── FilterRepository.java     # Repository for filtering entities based on criteria.
+│   └── MemoryRepository.java     # In-memory repository for storing entities.
 ├── Service
-│   ├── AppointmentService.java
-│   ├── PatientService.java
-│   ├── FilterService.java
-│   └── IService.java
+│   ├── AppointmentService.java   # Service layer for managing appointments.
+│   ├── PatientService.java      # Service layer for managing patients.
+│   ├── FilterService.java       # Service layer for filtered data.
+│   └── IService.java            # Interface for basic CRUD operations.
 ├── UI
-│   ├── IUi.java
-│   └── MainUi.java
+│   ├── IUi.java                 # Interface for UI operations.
+│   └── MainUi.java              # Main UI for interacting with the system.
 ├── MyExceptions
-│   └── EmptyRepoException.java
-└── Main.java
+│   └── EmptyRepoException.java  # Custom exception for handling empty repositories.
+└── Main.java                    # Main entry point of the system.
+```
+
+## Requirements
+- Java 8 or higher
+- An IDE such as IntelliJ IDEA or Eclipse
+
+## Installation
+Clone the repository and open it in your preferred IDE.
+
+## Usage
+Run the `Main.java` file to start the system. Follow the on-screen instructions to manage appointments and patients.
+
+## License
+This project is licensed under the MIT License.
+
 
 ## 🧪 How to Run
 
