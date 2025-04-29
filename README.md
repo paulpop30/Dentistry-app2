@@ -32,12 +32,16 @@ Defines the core business entities and validation logic.
 ### 2. 💾 Repository Layer (`repository/`)
 Handles data persistence and storage abstraction.
 
-- `RepositoryInterface<T>` – Generic CRUD interface
-- `InMemoryRepository<T>` – Stores data in memory for testing/demo
-- `FileRepository<T>` – Stores data in plaintext files
-- `DatabaseRepository<T>` – Interacts with a relational database using JDBC
-- `RepositoryFactory` – Reads the configuration and instantiates the correct repository type
+- Repositories handle data storage and retrieval. The system includes several repository types:
 
+- MemoryRepository: In-memory repository for storing entities.
+
+- AppointmentRepository, PatientRepository: Specialization of the Repository class for appointments and patients.
+
+- AppointmentTextRepository, AppointmentBinaryRepository, AppointmentDBRepository: Different types of data persistence for appointments.
+
+- FilterRepository: A repository responsible for filtering entities based on specific criteria.
+  
 **Configurable via `settings.properties`:**
 ```properties
 Repository = database
