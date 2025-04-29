@@ -128,19 +128,3 @@ java -cp bin ui.Main
 ```
 
 ---
-
-## 🧳 Why This Project Stands Out
-
-- Demonstrates **solid object-oriented programming** principles
-- Clear **separation of concerns** using layered architecture
-- Practical application of **Java 8 Streams** for data analytics
-- Real-world data persistence with file or database options
-- Easy to extend to a GUI or web application (Spring, JavaFX)
-
----
-
-## 📃 License
-
-This project is licensed under the MIT License. See `LICENSE` for more information.
-
----
