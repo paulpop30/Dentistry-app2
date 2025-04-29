@@ -1,19 +1,20 @@
 ### Dentistry application
 
-🔧 General Purpose
-Dentistry-app2 is a Java-based management system for a dental clinic. It handles core features such as:
+# 🔧 General Purpose
 
-Patient management
+- Dentistry-app2 is a Java-based management system for a dental clinic. It handles core features such as:
 
-Appointment scheduling and tracking
+- Patient management
 
-Treatment details
+- Appointment scheduling and tracking
 
-Data persistence via file or database repositories
+- Treatment details
 
-Report generation using Java Streams
+- Data persistence via file or database repositories
 
-The app is console-based and organized using object-oriented design and layered architecture (domain, repository, service, UI).
+- Report generation using Java Streams
+
+- The app is console-based and organized using object-oriented design and layered architecture (domain, repository, service, UI).
 
 📁 Code Structure and Main Components
 1. Domain Layer (domain/)
