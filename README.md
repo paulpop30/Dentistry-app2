@@ -18,9 +18,7 @@
 
 # 📁 Code Structure and Main Components
 
-# 1. Domain Layer (domain/)
-
-This defines the core entities and business logic.
+# 1. Domain Layer
 
 - Patient.java
   Represents a patient with fields like ID, name, and phone number.
