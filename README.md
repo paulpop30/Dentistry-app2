@@ -21,13 +21,13 @@
 # 1. Domain Layer
 
 - Patient.java
-  Represents a patient with fields like ID, name, and phone number.
+  - Represents a patient with fields like ID, name, and phone number.
 
 - Appointment.java
-  Represents an appointment with fields like patient, problem description, date, and status.
+  - Represents an appointment with fields like patient, problem description, date, and status.
 
 - Validator.java / PatientValidator.java / AppointmentValidator.java
-  Validate that patients and appointments meet business rules (e.g., non-empty names, valid dates).
+  - Validate that patients and appointments meet business rules (e.g., non-empty names, valid dates).
 
   - Implement classes in the repository that allow storing and retrieving data to/from a relational database. The decision of which repositories are employed, as well as the location of the 
   repository input files / database will be made available via the program’s settings.properties file and the Java Properties class. See an example is below:
