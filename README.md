@@ -106,33 +106,54 @@ Leverages Java 8 Streams for powerful data querying:
 
 ---
 
-# Project Title
-
-## Description
-This project is a dental appointment management system. It allows the management of patient data, appointments, and filtering of records. It includes a service layer for business logic and a UI for interaction with the system.
-
 ## File Structure
 
 ```
 ├── Domain
-│   ├── Appointment.java        # Represents a dental appointment.
-│   └── Patient.java           # Represents a patient in the system.
+│   ├── Appointment.java      
+│   └── Patient.java
+|   └── Identifiable.java          
 ├── Repository
-│   ├── AppointmentRepository.java  # Repository for managing appointments.
-│   ├── PatientRepository.java     # Repository for managing patient data.
-│   ├── FilterRepository.java     # Repository for filtering entities based on criteria.
-│   └── MemoryRepository.java     # In-memory repository for storing entities.
+|   ├── AppointmentBinaryRepository.java
+|   ├── AppointmentDBRepository.java
+|   ├── AppointmentTextRepository.java
+|   ├── FileRepository.java
+|   ├── IRepository.java
+|   ├── PatientBinaryRepository.java
+|   ├── PatientDBRepository.java
+|   ├── PatientTextRepository.java
+│   ├── AppointmentRepository.java  
+│   ├── PatientRepository.java     
+│   ├── FilterRepository.java     
+│   └── MemoryRepository.java     
 ├── Service
-│   ├── AppointmentService.java   # Service layer for managing appointments.
-│   ├── PatientService.java      # Service layer for managing patients.
-│   ├── FilterService.java       # Service layer for filtered data.
-│   └── IService.java            # Interface for basic CRUD operations.
+│   ├── AppointmentService.java   
+│   ├── PatientService.java      
+│   ├── FilterService.java       
+│   └── IService.java            
 ├── UI
-│   ├── IUi.java                 # Interface for UI operations.
-│   └── MainUi.java              # Main UI for interacting with the system.
+│   ├── IUi.java               
+│   └── MainUi.java             
 ├── MyExceptions
-│   └── EmptyRepoException.java  # Custom exception for handling empty repositories.
-└── Main.java                    # Main entry point of the system.
+│   ├── EmptyRepoException.java
+|   ├── ID_ExceptionAlready.java
+|   ├── ID_ExceptionNotFound.java
+|   ├── ID_Patient_ExceptionNotFound.java
+|   └── InvalidException.java
+├── Main
+|   ├── settings.properties
+|   └── star.java
+├── Filters
+|   ├── AbstractFilter.java
+|   ├── AgeFilterPatient.java
+|   ├── DateFilterAppointment.java
+|   ├── HeightFilterPatient.java
+|   └── WeightFilterPatient.java
+├── Tests
+|   ├── AppointmentTests.java
+|   ├── RepositoryTests.java
+|   └── ServiceTests.java
+                   
 ```
 
 ## Requirements
