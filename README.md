@@ -1,46 +1,146 @@
-### Dentistry application
 
-# 🔧 General Purpose
+# 🦷 Dentistry-app2 – Dental Clinic Management System
 
-- Dentistry-app2 is a Java-based management system for a dental clinic. It handles core features such as:
+**Dentistry-app2** is a modular, object-oriented Java application designed to simulate and manage the core operations of a dental clinic. It enables efficient handling of patient data, appointment scheduling, and clinical reports. The app supports multiple persistence layers (in-memory, file-based, and database-backed using JDBC), and offers robust data validation and reporting via Java 8 Streams. Built with clean architecture and layered design principles, this project is ideal for showcasing your understanding of scalable Java development.
 
-- Patient management
+---
 
-- Appointment scheduling and tracking
+## 🚀 Features
 
-- Treatment details
+- Register, update, and delete patients and appointments
+- Track appointment status and filter by date, patient, or issue
+- Generate dynamic reports using Java Streams
+- Switch between in-memory, file-based, or database storage via configuration
+- Input validation for business rules (e.g. valid dates, phone numbers)
+- Console-based UI for easy interaction
 
-- Data persistence via file or database repositories
+---
 
-- Report generation using Java Streams
+## 🏗️ Architecture Overview
 
-- The app is console-based and organized using object-oriented design and layered architecture (domain, repository, service, UI).
+Dentistry-app2 follows a **Layered Architecture** consisting of:
 
-# 📁 Code Structure and Main Components
+### 1. 📦 Domain Layer (`domain/`)
+Defines the core business entities and validation logic.
 
-# 1. Domain Layer
+- `Entity.java` – Abstract base class with an `id` field
+- `Patient.java` – Represents a patient with fields: `id`, `name`, `phoneNumber`
+- `Appointment.java` – Represents a clinic appointment with fields: `id`, `patient`, `problem`, `date`, `status`
 
-- Patient.java
-  - Represents a patient with fields like ID, name, and phone number.
+**Validators:**
+- `Validator<T>` – Generic interface for validation
+- `PatientValidator` – Validates name and phone number
+- `AppointmentValidator` – Validates appointment date, problem description, and status
 
-- Appointment.java
-  - Represents an appointment with fields like patient, problem description, date, and status.
+---
 
-- Validator.java / PatientValidator.java / AppointmentValidator.java
-  - Validate that patients and appointments meet business rules (e.g., non-empty names, valid dates).
+### 2. 💾 Repository Layer (`repository/`)
+Handles data persistence and storage abstraction.
 
-  - Implement classes in the repository that allow storing and retrieving data to/from a relational database. The decision of which repositories are employed, as well as the location of the 
-  repository input files / database will be made available via the program’s settings.properties file and the Java Properties class. See an example is below:
-  - Repository = database
-  - Location = data
-  - Patients = patients
-  - Appointments = appointments
+- `RepositoryInterface<T>` – Generic CRUD interface
+- `InMemoryRepository<T>` – Stores data in memory for testing/demo
+- `FileRepository<T>` – Stores data in plaintext files
+- `DatabaseRepository<T>` – Interacts with a relational database using JDBC
+- `RepositoryFactory` – Reads the configuration and instantiates the correct repository type
 
-- Provide various reports, using Java 8 streams. You should create at least 5 different reports. See some examples below:
-  - all the appointments for a certain patient (and their status); 
-  -	the problems of a certain patient; 
-  -	the phone number of a certain patient (given by id); 
-  -	the name of the persons who booked a certain car; 
-  -	all cars rented by a certain person; 
-  -	the list of birthday cakes that for ordered for a given day; 
-  -	the days when a certain birthday cake has to be delivered.
+**Configurable via `settings.properties`:**
+```properties
+Repository = database
+Location = data
+Patients = patients
+Appointments = appointments
+```
+
+---
+
+### 3. ⚙️ Service Layer (`service/`)
+Implements business logic and operations on domain entities.
+
+- `PatientService`  
+  - Add/update/remove patients  
+  - Search/filter patients by name or ID  
+  - Generate patient-based reports
+
+- `AppointmentService`  
+  - Schedule or cancel appointments  
+  - Track and update appointment statuses  
+  - Generate reports using Java Streams:
+    - Filter appointments by date
+    - Count appointments per patient
+    - Identify most common problems
+
+---
+
+### 4. 🖥️ UI Layer (`ui/`)
+Console-based interface and entry point for the application.
+
+- `Main.java` – Entry point: loads settings, initializes repositories and services
+- `UI.java` – Displays a text-based menu to:
+  - Manage patients and appointments
+  - Display filtered results and reports
+  - Provide feedback to the user
+
+---
+
+## 📊 Java Streams-Based Reporting
+
+Leverages Java 8 Streams for powerful data querying:
+- List all appointments by patient
+- Get contact info by patient ID
+- Identify common treatment problems
+- Find appointments by status/date
+- Detect which patients need follow-up
+
+---
+
+## 🛠 Technologies Used
+
+- **Java 8+**
+- **JDBC** for database communication
+- **File I/O** for plaintext data persistence
+- **Java Streams** for modern data processing
+- **Properties files** for dynamic configuration
+- **Design Patterns**:
+  - Factory Pattern (`RepositoryFactory`)
+  - Layered Architecture (separates UI, business logic, and data layers)
+
+---
+
+## 🧪 How to Run
+
+### 1. Clone the Repository
+```bash
+git clone https://github.com/paulpop30/Dentistry-app2.git
+cd Dentistry-app2
+```
+
+### 2. Configure Repository Type
+
+Edit the `settings.properties` file to select storage type:
+```properties
+Repository = database   # or "file" or "memory"
+```
+
+### 3. Compile and Run
+```bash
+javac -d bin */*.java
+java -cp bin ui.Main
+```
+
+---
+
+## 🧳 Why This Project Stands Out
+
+- Demonstrates **solid object-oriented programming** principles
+- Clear **separation of concerns** using layered architecture
+- Practical application of **Java 8 Streams** for data analytics
+- Real-world data persistence with file or database options
+- Easy to extend to a GUI or web application (Spring, JavaFX)
+
+---
+
+## 📃 License
+
+This project is licensed under the MIT License. See `LICENSE` for more information.
+
+---
